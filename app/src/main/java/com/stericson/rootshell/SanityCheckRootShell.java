@@ -27,6 +27,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.os.StrictMode;
 import android.widget.ScrollView;
@@ -386,6 +387,10 @@ public class SanityCheckRootShell extends Activity
         static final public int ACTION_DISPLAY = 0x03;
         static final public int ACTION_PDISPLAY = 0x04;
         static final public String TEXT = "text";
+        public TestHandler()
+        {
+            super(Looper.getMainLooper());
+        }
 
         public void handleMessage(Message msg)
         {

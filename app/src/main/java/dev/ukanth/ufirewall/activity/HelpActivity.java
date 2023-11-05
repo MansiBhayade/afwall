@@ -6,7 +6,7 @@ import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
-import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.widget.ViewPager2;
 
 import dev.ukanth.ufirewall.R;
 import dev.ukanth.ufirewall.ui.about.ViewPagerAdapter;
@@ -15,7 +15,7 @@ import dev.ukanth.ufirewall.util.SlidingTabLayout;
 
 public class HelpActivity extends AppCompatActivity {
 
-    private ViewPager viewPager;
+    private ViewPager2 viewPager;
     private ViewPagerAdapter adapter;
     private SlidingTabLayout tabs;
 	private final int count = 0;
@@ -36,8 +36,8 @@ public class HelpActivity extends AppCompatActivity {
             setSupportActionBar(toolbar);
 
 
-            // Creating The ViewPagerAdapter and Passing Fragment Manager, Titles fot the Tabs and Number Of Tabs.
-            adapter =  new ViewPagerAdapter(getSupportFragmentManager(), viewTitles, noOfTabs);
+            // Creating The ViewPagerAdapter and Passing Fragment Activity, Titles for the Tabs and Number Of Tabs.
+            adapter =  new ViewPagerAdapter(this, viewTitles, noOfTabs);
 
             // Initilization
             viewPager = findViewById(R.id.pager);
